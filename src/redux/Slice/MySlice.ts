@@ -8,8 +8,9 @@ export const counterSlice = createSlice({
     },
     reducers: {
         addNote: (state, action) => {
+            console.log('hello')
             let notes = state.Notes;
-            notes.push(action.payload.data);
+            notes.push(action.payload);
             state.Notes = notes;
         },
         deleteNote: (state, action) => {
