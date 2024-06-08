@@ -5,7 +5,11 @@ import { addNote, completeNote, deleteNote } from "./redux/Slice/MySlice";
 import {NoteType} from './Notestype'
 function App() {
   const AllNotes = useSelector((state: any) => state.notes.Notes)
-  const [currNote,setCurrNote] = useState<NoteType>();
+  const [currNote,setCurrNote] = useState<NoteType>({
+    id:0,
+    description: '',
+    isComplete:false
+  });
   const dispatch = useDispatch()
   const handleComplete = (id:number) => {
     dispatch(completeNote(id))
